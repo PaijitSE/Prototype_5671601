@@ -1,0 +1,35 @@
+body {
+  background: #cbe2f5;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.header {
+  width: 100vw;
+  height: 8vh;
+  background: #4167c0;
+}
+.txtHead {
+  padding-left: 10px;
+  font-size: 14pt;
+  font-weight: bold;
+  color: white;
+  float: left;
+}
+
+.menu {
+  float: right;
+  list-style: none;
+  display: flex;
+  font-size: 12pt;
+  font-weight: bold;
+  color: rgb(241, 240, 238);
+}
+
+li {
+  padding-right: 10px;
+}
+
+.submenu {
+  display: none;
+}
