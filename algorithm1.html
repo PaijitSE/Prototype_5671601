@@ -1,29 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithms : คำนวณเงินทอน</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- header & Menu bar -->
-     <div class="header">
-      <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
-      <ul class="menu">
-        <li><a href="index.html">หน้าหลัก</a></li>
-        <li>
-          <a href="#">ขั้นตอนวิธีแบบลำดับ</S></a>
-          <ul>
-            <li><a href="#">คำนวณเงินทอน</a></li>
-            <li><a href="#">ไฟแนนซ์ผ่อนรถยนต์</a></li>
-          </ul>
-        </li>
-        <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a></li>
-        <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a></li>
-      </ul>
-    </div>
-<!-- work area -->
 
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+    rel="stylesheet">
+  <title>Prototype of 5671601 Introduction to SE.</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/algorithm1.css" />
+</head>
+
+<body>
+  <!-- header & Menu bar -->
+  <div class="header">
+    <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+    <ul class="menu">
+      <li><a href="index.html">หน้าหลัก</a></li>
+      <li>
+        <a href="#">ขั้นตอนวิธีแบบลำดับ</S></a>
+        <ul>
+          <li><a href="#">คำนวณเงินทอน</a></li>
+          <li><a href="#">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+        </ul>
+      </li>
+      <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a></li>
+      <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a></li>
+    </ul>
+  </div>
+
+  <!-- work area -->
+  <div class="algo1">
+    <p>การคำนวณเงินทอน</p>
+    <div class="algo1_left">
+      Algorithms : คำนวณเงินทอน
+      <img src="img/algo1.jpg" alt="">
+    </div>
+    <div class="algo1_right">
+      <p>รับค่าสินค้า
+        <input type="text" id="input1" value="256.00">
+        บาท
+      </p>
+      <p>รับค่าเงินมา
+        <input type="text" id="input2" value="500.00">
+        บาท
+      </p>
+      <button class="work" onclick="caluateAlgorithm1();">คำนวณเงินทอน</button>
+      <button class="cancel" onclick="clearAlgorithm1();">ยกเลิก</button>
+      <div class="show">
+        <h2>เงินทอน = <label id="total"> 0.00 </label> บาท </h2>
+        <div class="show_area">
+          <p>แบงค์ 500</p>
+          <p class="money">0</p>
+          <p>ใบ</p>
+          <p>แบงค์ 100</p>
+          <p class="money">0</p>
+          <p>ใบ</p>
+          <p>แบงค์ 50</p>
+          <p class="money">0</p>
+          <p>ใบ</p>
+          <p>แบงค์ 20</p>
+          <p class="money">0</p>
+          <p>ใบ</p>
+          <p>เหรียญ 10</p>
+          <p class="money">0</p>
+          <p>เหรียญ</p>
+          <p>เหรียญ 5</p>
+          <p class="money">0</p>
+          <p>เหรียญ</p>
+          <p>เหรียญ 1</p>
+          <p class="money">0</p>
+          <p>เหรียญ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function caluateAlgorithm1() {
+      let P = document.getElementById("input1").value;
+      let R = document.getElementById("input2").value;
+      let T = R - P;
+      document.getElementById("total").innerText = T + '.00';
+      let B500 = Math.floor(T / 500);
+      T = T % 500;
+      let B100 = Math.floor(T / 100);
+      T = T % 100;
+      let B50 = Math.floor(T / 50);
+      T = T % 50;
+      let B20 = Math.floor(T / 20);
+      T = T % 20;
+      let L10 = Math.floor(T / 10);
+      T = T % 10;
+      let L5 = Math.floor(T / 5);
+      L1 = T % 5;
+      let d = document.getElementsByClassName("money");
+      d[0].innerText = B500;
+      d[1].innerText = B100;
+      d[2].innerText = B50;
+      d[3].innerText = B20;
+      d[4].innerText = L10;
+      d[5].innerText = L5;
+      d[6].innerText = L1;
+    }
+
+    function clearAlgorithm1() {
+      document.getElementById("input1").value = '0.00';
+      document.getElementById("input2").value = '0.00';
+      document.getElementById("total").innerText = '0.00';
+      let d = document.getElementsByClassName("money");
+      d[0].innerText = '0';
+      d[1].innerText = '0';
+      d[2].innerText = '0';
+      d[3].innerText = '0';
+      d[4].innerText = '0';
+      d[5].innerText = '0';
+      d[6].innerText = '0';
+    }
+  </script>
+</body>
+
 </html>

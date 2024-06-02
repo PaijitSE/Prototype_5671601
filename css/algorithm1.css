@@ -1,0 +1,117 @@
+.algo1 {
+  width: 70vw;
+  height: 85vh;
+  background: #bed4ee;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.algo1 p {
+  width: 100%;
+  background: #36456d;
+  color: white;
+  padding: 10px 0px;
+  margin: 5px 0;
+  border-radius: 10px;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.algo1_left {
+  float: left;
+  margin: 10px 10px;
+  width: 50%;
+  height: 86%;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  overflow: auto;
+}
+
+.algo1_left img {
+  width: 90%;
+  height: 90%;
+  margin: 10px;
+}
+.algo1_right {
+  float: right;
+  margin: 10px 10px;
+  padding: 10px 0;
+  width: 46%;
+  height: 83%;
+  background: rgb(208, 223, 248);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.algo1_right p,
+input {
+  color: black;
+  font-size: 14pt;
+  background: none;
+  border-radius: 10px;
+}
+
+.algo1_right input {
+  background: #d9d9d9;
+}
+
+.algo1_right button {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 12pt;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  width: 150px;
+}
+
+.algo1_right .work {
+  background: #f03434;
+}
+
+.algo1_right .cancel {
+  background: #ecd16f;
+}
+
+.show {
+  width: 90%;
+  height: 44vh;
+  background: #9fbdf7;
+  border-radius: 10px;
+  margin: 20px 20px;
+  padding: 10px 0;
+  font-size: 12pt;
+  font-weight: lighter;
+}
+
+.show h2 {
+  margin: 5px auto;
+}
+
+.show h2 label {
+  font-size: 16pt;
+  color: red;
+  background-color: transparent;
+}
+
+.show_area {
+  display: grid;
+  grid-template-columns: 40% 25% 20%;
+  margin-left: 100px;
+}
+
+.show_area p {
+  font-size: 12pt;
+  padding: 5px;
+  text-align: center;
+}
+
+.show_area .money {
+  font-size: 12pt;
+  padding: 5px;
+  background: #f2b860;
+  width: 80px;
+}

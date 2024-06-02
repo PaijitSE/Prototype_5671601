@@ -1,9 +1,13 @@
+* {
+    font-family: "Chakra Petch", sans-serif;
+}
+
 body {
-  background: #cbe2f5;
   margin: 0;
   padding: 0;
   display: block;
 }
+
 .header {
   width: 100vw;
   height: 8vh;
@@ -11,17 +15,18 @@ body {
 }
 .txtHead {
   padding-left: 10px;
-  font-size: 14pt;
+  font-size: 16pt;
   font-weight: bold;
   color: white;
   float: left;
+  margin-top: 15px;
 }
 
 .menu {
   float: right;
   list-style: none;
   display: flex;
-  font-size: 12pt;
+  font-size: 13pt;
   font-weight: bold;
   color: #f1f0ee;
 }
@@ -29,7 +34,7 @@ body {
 /* position: absolute; แสดงแบบอิสระ */
 
 .menu li {
-  font-size: 11pt;
+  font-size: 12pt;
   padding-right: 20px;
 }
 
@@ -89,7 +94,7 @@ body {
 .info1 {
   width: 70vw;
   height: 40vh;
-  background: #03164f;
+  background: #2d4aa1;
   margin: 10px auto;
   border-radius: 20px;
 }
@@ -98,18 +103,18 @@ body {
   float : left;
   width: 260px;
   height: 260px;
-  margin: 10px 0 10px 100px;
+  margin: 10px 0 10px 130px;
 }
 
 .info1 .myinfo {
   float: right;
-  width: 50%;
+  width: 55%;
 
 }
 
 .info1 .myinfo .infoleft {
   float : left;
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: bold;
   color: bisque;
   margin-top: 10px;
@@ -117,9 +122,9 @@ body {
 
 .info1 .myinfo .inforight {
   margin-top: 10px;
-  width: 65%;
+  width: 70%;
   float : right;
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: bold;
   color: #e1250d;
 }
@@ -133,10 +138,12 @@ body {
 
 .footer {
   background: #807e7c;
+  margin: 0;
   width: 100%;
+  position: fixed;
+  bottom: 0px;
   height: 20px;
   text-align: center;
-  font-weight: bold;
   font-size: 12pt;
   color: white;
   padding: 10px;
