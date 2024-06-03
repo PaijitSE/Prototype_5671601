@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <title>Prototype of 5671601 Introduction to SE.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/algorithm2.css" />
+</head>
+
+<body>
+    <!-- header & Menu bar -->
+    <div class="header">
+        <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+        <ul class="menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li>
+                <a href="">ขั้นตอนวิธีแบบลำดับ</S></a>
+                <ul>
+                    <li><a href="algorithm1.html">คำนวณเงินทอน</a></li>
+                    <li><a href="algorithm2.html">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a>
+                <ul>
+                    <li><a href="algorithm3.html">คำนวณค่าดัชนีมวลกาย</a></li>
+                    <li><a href="algorithm4.html">การตัดเกรด</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a>
+                <ul>
+                    <li><a href="algorithm5.html">หาค่าจำนวน GCD/LCM</a></li>
+                    <li><a href="algorithm6.html">แปลงค่าตัวเลข->อักษร</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- work area -->
+    <div class="algo">
+        <p>ไฟแนนซ์ผ่อนรถยนต์</p>
+        <div class="algo_left">
+            Algorithms : ไฟแนนซ์ผ่อนรถยนต์<br>
+            <img src="img/algo2.jpg" alt="">
+        </div>
+        <div class="algo_right">
+            <div class="input">
+                <p>ราคารถยนต์</p>
+                <input type="text" id="input1" value="1000000.00">
+                <p>บาท
+                </p>
+                <p>จำนวนเงินดาวน์</p>
+                <input type="text" id="input2" value="300000.00">
+                <p>บาท
+                </p>
+                <p>จำนวนผ่อนชำระ</p>
+                <input type="text" id="input3" value="48">
+                <p>งวด
+                </p>
+                <p>อัตราดอกเบี้ย</p>
+                <input type="text" id="input4" value="3">
+                <p>ร้อยละ
+                </p>
+            </div>
+            <button class="work" onclick="caluateAlgorithm2();">คำนวณเงินงวด</button>
+            <button class="cancel" onclick="clearAlgorithm2();">ยกเลิก</button>
+            <div class="show">
+                <h2>ต้องชำระต่องวด = <label id="total"> 0.00 </label> บาท </h2>
+                <div class="show_area">
+                    <p>ราคารถยนต์ & ดอกเบี้ย</p>
+                    <p class="money">0.00</p>
+                    <p>บาท</p>
+                    <p>ดอกเบี้ยรวมทั้งสิ้น</p>
+                    <p class="money">0.00</p>
+                    <p>บาท</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function caluateAlgorithm2() {
+            let P = parseInt(document.getElementById("input1").value);
+            let R = parseInt(document.getElementById("input2").value);
+            let N = parseInt(document.getElementById("input3").value);
+            let D = parseInt(document.getElementById("input4").value);
+            let Y = P - R;          //เงินต้นคงเหลือ
+            let X = (Y * D) / 100;  //จำนวนดอกเบี้ยต่อปี
+            let Net = (N / 12) * X; //จำนวนดอกเบี้ยทั้งหมด 
+            let Netx = (Net + Y);   //จำนวนเงินต้นคงเหลือ+ดอกเบี้ยที่ต้องชำระ
+            let M = (Netx / N);       //จำนวนเงินที่ต้องชำระต่องวด
+            document.getElementById("total").innerText = M.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = (Netx + R).toLocaleString() + '.00';
+            d[1].innerText = Net.toLocaleString() + '.00';
+        }
+
+        function clearAlgorithm2() {
+            document.getElementById("input1").value = '0.00';
+            document.getElementById("input2").value = '0.00';
+            document.getElementById("input3").value = '0.00';
+            document.getElementById("input4").value = '0.00';
+            document.getElementById("total").innerText = '0.00';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = '0.00';
+            d[1].innerText = '0.00';
+        }
+    </script>
+</body>
+
+</html>

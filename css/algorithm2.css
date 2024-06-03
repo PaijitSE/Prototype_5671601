@@ -27,11 +27,12 @@
   background: white;
   border-radius: 10px;
   text-align: center;
+  text-shadow: 1px 1px rgb(63, 55, 227);
   overflow: auto;
 }
 
 .algo_left img {
-  width: 90%;
+  width: 40%;
   height: 90%;
   margin: 10px;
 }
@@ -44,19 +45,27 @@
   height: 83%;
   background: rgb(208, 223, 248);
   border-radius: 10px;
-  text-align: center;
+}
+.algo_right .input {
+  display: grid;
+  grid-template-columns: 40% 30% 20%;
 }
 
 .algo_right p,
 input {
+  text-align: center;
   color: black;
   font-size: 14pt;
   background: none;
   border-radius: 10px;
+  padding: 0;
+  margin: 15px;
 }
 
 .algo_right input {
   background: #d9d9d9;
+  text-align: right;
+  padding-right: 10px;
 }
 
 .algo_right button {
@@ -71,6 +80,7 @@ input {
 
 .algo_right .work {
   background: #f03434;
+  margin-left: 120px;
 }
 
 .algo_right .cancel {
@@ -79,13 +89,14 @@ input {
 
 .show {
   width: 90%;
-  height: 44vh;
+  height: 28vh;
   background: #9fbdf7;
   border-radius: 10px;
   margin: 20px 20px;
   padding: 10px 0;
   font-size: 12pt;
   font-weight: lighter;
+  text-align: center;
 }
 
 .show h2 {
@@ -100,19 +111,19 @@ input {
 
 .show_area {
   display: grid;
-  grid-template-columns: 40% 25% 20%;
-  margin-left: 100px;
+  grid-template-columns: 40% 40% 10%;
 }
 
 .show_area p {
   font-size: 12pt;
   padding: 5px;
-  text-align: center;
+  text-align: right;
 }
 
 .show_area .money {
   font-size: 12pt;
   padding: 5px;
   background: #f2b860;
-  width: 80px;
+  width: 150px;
+  margin-left: 30px;
 }

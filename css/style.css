@@ -1,5 +1,5 @@
 * {
-    font-family: "Chakra Petch", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 body {
@@ -29,6 +29,7 @@ body {
   font-size: 13pt;
   font-weight: bold;
   color: #f1f0ee;
+  margin-right: 50px;
 }
 
 /* position: absolute; แสดงแบบอิสระ */
@@ -54,7 +55,7 @@ body {
 .menu li li {
   font-size: 11pt;
   line-height: 30px;
-  te
+  white-space: nowrap;
 }
 
 /* Sub-menu */
@@ -100,7 +101,7 @@ body {
 }
 
 .info1 img {
-  float : left;
+  float: left;
   width: 260px;
   height: 260px;
   margin: 10px 0 10px 130px;
@@ -109,11 +110,10 @@ body {
 .info1 .myinfo {
   float: right;
   width: 55%;
-
 }
 
 .info1 .myinfo .infoleft {
-  float : left;
+  float: left;
   font-size: 14pt;
   font-weight: bold;
   color: bisque;
@@ -123,7 +123,7 @@ body {
 .info1 .myinfo .inforight {
   margin-top: 10px;
   width: 70%;
-  float : right;
+  float: right;
   font-size: 14pt;
   font-weight: bold;
   color: #e1250d;
@@ -152,11 +152,3 @@ body {
 .footer p {
   margin: 0;
 }
-
-
-
-
-
-
-
-
