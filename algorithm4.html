@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <title>Prototype of 5671601 Introduction to SE.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/algorithm4.css" />
+</head>
+
+<body>
+    <!-- header & Menu bar -->
+    <div class="header">
+        <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+        <ul class="menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li>
+                <a href="">ขั้นตอนวิธีแบบลำดับ</S></a>
+                <ul>
+                    <li><a href="algorithm1.html">คำนวณเงินทอน</a></li>
+                    <li><a href="algorithm2.html">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a>
+                <ul>
+                    <li><a href="algorithm3.html">คำนวณค่าดัชนีมวลกาย</a></li>
+                    <li><a href="algorithm4.html">การตัดเกรด</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a>
+                <ul>
+                    <li><a href="algorithm5.html">หาค่าจำนวน GCD/LCM</a></li>
+                    <li><a href="algorithm6.html">แปลงค่าตัวเลข->อักษร</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- work area -->
+    <div class="algo">
+        <p>การตัดเกรด 8 ระดับ</p>
+        <div class="algo_left">
+            Algorithms : การตัดเกรด<br>
+            <img src="img/algo4.jpg" alt="">
+        </div>
+        <div class="algo_right">
+            <div class="input">
+                <p>คะแนนสอบ ครั้งที่ 1</p>
+                <input type="text" id="input1" value="25">
+                <p>คะแนน
+                </p>
+                <p>คะแนนสอบ ครั้งที่ 2</p>
+                <input type="text" id="input2" value="30">
+                <p>คะแนน
+                </p>
+                <p>คะแนนสอบ ครั้งที่ 3</p>
+                <input type="text" id="input3" value="20">
+                <p>คะแนน
+                </p>
+            </div>
+            <button class="work" onclick="caluateAlgorithm4();">คำนวณเกรด</button>
+            <button class="cancel" onclick="clearAlgorithm4();">ยกเลิก</button>
+            <div class="show">
+                <h2>เกรดของคุณคือ </h2>
+                <label id="total">-</label>
+                <div class="show_area">
+                    <p>คะแนนรวมทั้งสิ้น </p>
+                    <p class="money">0</p>
+                    <p>คะแนน</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function caluateAlgorithm4() {
+            let Score1 = parseFloat(document.getElementById("input1").value);
+            let Score2 = parseFloat(document.getElementById("input2").value);
+            let Score3 = parseFloat(document.getElementById("input3").value);
+            let Total = Score1 + Score2 + Score3;
+            let result = '';
+            if (Total >= 80) { result = 'A'; }
+            else if (Total >= 75) { result = 'B+'; }
+            else if (Total >= 70) { result = 'B'; }
+            else if (Total >= 65) { result = 'C+'; }
+            else if (Total >= 60) { result = 'C'; }
+            else if (Total >= 55) { result = 'D+'; }
+            else if (Total >= 50) { result = 'D'; }
+            else { result = 'F'; }
+            document.getElementById("total").innerText = '[ ' + result + ' ]';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = Total;
+        }
+
+        function clearAlgorithm4() {
+            document.getElementById("input1").value = '0.00';
+            document.getElementById("input2").value = '0.00';
+            document.getElementById("input3").value = '0.00';
+            document.getElementById("total").innerText = '-';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = '0.0';
+        }
+    </script>
+</body>
+
+</html>

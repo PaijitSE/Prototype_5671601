@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <title>Prototype of 5671601 Introduction to SE.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/algorithm3.css" />
+</head>
+
+<body>
+    <!-- header & Menu bar -->
+    <div class="header">
+        <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+        <ul class="menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li>
+                <a href="">ขั้นตอนวิธีแบบลำดับ</S></a>
+                <ul>
+                    <li><a href="algorithm1.html">คำนวณเงินทอน</a></li>
+                    <li><a href="algorithm2.html">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a>
+                <ul>
+                    <li><a href="algorithm3.html">คำนวณค่าดัชนีมวลกาย</a></li>
+                    <li><a href="algorithm4.html">การตัดเกรด</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a>
+                <ul>
+                    <li><a href="algorithm5.html">หาค่าจำนวน GCD/LCM</a></li>
+                    <li><a href="algorithm6.html">แปลงค่าตัวเลข->อักษร</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- work area -->
+    <div class="algo">
+        <p>คำนวณค่าดัชนีมวลกาย</p>
+        <div class="algo_left">
+            Algorithms : คำนวณค่าดัชนีมวลกาย<br>
+            <img src="img/algo3.jpg" alt="">
+        </div>
+        <div class="algo_right">
+            <div class="input">
+                <p>ระบุส่วนสูง</p>
+                <input type="text" id="input1" value="160">
+                <p>เซนติเมตร
+                </p>
+                <p>ระบุน้ำหนัก</p>
+                <input type="text" id="input2" value="70">
+                <p>กิโลกรัม
+                </p>
+                <p>ระบุเพศ</p>
+                <input type="text" id="input3" value="ชาย">
+                <p>[ชาย/หญิง]
+                </p>
+            </div>
+            <button class="work" onclick="caluateAlgorithm3();">คำนวณ BMI</button>
+            <button class="cancel" onclick="clearAlgorithm3();">ยกเลิก</button>
+            <div class="show">
+                <h2>ภาวะของคุณคือ </h2>
+                <label id="total">-</label>
+                <div class="show_area">
+                    <p>ค่า BMI </p>
+                    <p class="money">0.0</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function caluateAlgorithm3() {
+            let H = parseFloat(document.getElementById("input1").value);
+            let W = parseFloat(document.getElementById("input2").value);
+            let S = document.getElementById("input3").value;
+            H = H / 100;            //แปลงส่วนสูงเป็นเมตร
+            let BMI = W / (H ** 2); //คำนวณค่า BMI
+            let result = '';
+            if (S == "ชาย") {
+                if (BMI < 18.5) {
+                    result = 'คุณผอมเกินไปแล้ว !!';
+                } else if (BMI <= 24.9) {
+                    result = 'หุ่นคุณกำลังพอดีเลย';
+                } else if (BMI <= 29.9) {
+                    result = 'คุณเริ่มจะอ้วนแล้วนะ';
+                } else if (BMI <= 34.9) {
+                    result = 'คุณอ้วนแล้วนะ';
+                } else {
+                    result = 'คุณอ้วนเกินไปแล้วนะ !!';
+                }
+            } else {
+                if (BMI < 18.5) {
+                    result = 'คุณผอมเกินไปแล้ว -o-';
+                } else if (BMI <= 23.9) {
+                    result = 'หุ่นคุณกำลังพอดีเลย ';
+                } else if (BMI <= 28.9) {
+                    result = 'คุณเริ่มจะอ้วนแล้วนะ';
+                } else if (BMI <= 34.9) {
+                    result = 'คุณอ้วนแล้วนะ';
+                } else {
+                    result = 'คุณอ้วนเกินไปแล้วนะ !!';
+                }
+            }
+            document.getElementById("total").innerText = '[' + result + ']';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = BMI.toFixed(1);
+        }
+
+        function clearAlgorithm3() {
+            document.getElementById("input1").value = '0.00';
+            document.getElementById("input2").value = '0.00';
+            document.getElementById("input3").value = 'ชาย';
+            document.getElementById("total").innerText = '-';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = '0.0';
+        }
+    </script>
+</body>
+
+</html>

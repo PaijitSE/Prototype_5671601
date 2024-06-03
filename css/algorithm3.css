@@ -1,0 +1,131 @@
+.algo {
+  width: 70vw;
+  height: 85vh;
+  background: #bed4ee;
+  margin: 10px auto;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.algo p {
+  width: 100%;
+  background: #36456d;
+  color: white;
+  padding: 10px 0px;
+  margin: 5px 0;
+  border-radius: 10px;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.algo_left {
+  float: left;
+  margin: 10px 10px;
+  width: 50%;
+  height: 86%;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  text-shadow: 1px 1px rgb(63, 55, 227);
+  overflow: auto;
+}
+
+.algo_left img {
+  width: 95%;
+  height: 90%;
+  margin: 10px;
+}
+
+.algo_right {
+  float: right;
+  margin: 10px 10px;
+  padding: 10px 0;
+  width: 46%;
+  height: 83%;
+  background: rgb(208, 223, 248);
+  border-radius: 10px;
+}
+.algo_right .input {
+  display: grid;
+  grid-template-columns: 40% 30% 20%;
+}
+
+.algo_right p,
+input {
+  text-align: center;
+  color: black;
+  font-size: 14pt;
+  background: none;
+  border-radius: 10px;
+  padding: 0;
+  margin: 15px;
+}
+
+.algo_right input {
+  background: #d9d9d9;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.algo_right button {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 12pt;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  width: 150px;
+}
+
+.algo_right .work {
+  background: #f03434;
+  margin-left: 120px;
+}
+
+.algo_right .cancel {
+  background: #ecd16f;
+}
+
+.show {
+  width: 90%;
+  height: 28vh;
+  background: #9fbdf7;
+  border-radius: 10px;
+  margin: 20px 20px;
+  padding: 10px 0;
+  font-size: 12pt;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.show h2 {
+  font-size: 16pt;
+  margin: 5px auto;
+}
+
+.show label {
+  font-size: 18pt;
+  font-weight: bold;
+  color: red;
+  background-color: transparent;
+}
+
+.show_area {
+  display: grid;
+  grid-template-columns: 40% 20% 10%;
+  padding-top: 20px;
+  font-size: 16pt;
+}
+
+.show_area p {
+  padding: 5px;
+  text-align: center;
+}
+
+.show_area .money {
+  padding: 5px;
+  background: #f2b860;
+  width: 150px;
+  margin-left: 30px;
+}
