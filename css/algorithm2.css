@@ -45,6 +45,7 @@
   height: 83%;
   background: rgb(208, 223, 248);
   border-radius: 10px;
+  text-align: center;
 }
 .algo_right .input {
   display: grid;
@@ -80,7 +81,7 @@ input {
 
 .algo_right .work {
   background: #f03434;
-  margin-left: 120px;
+  color: white;
 }
 
 .algo_right .cancel {

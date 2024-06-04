@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <title>Prototype of 5671601 Introduction to SE.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/algorithm6.css" />
+</head>
+
+<body>
+    <!-- header & Menu bar -->
+    <div class="header">
+        <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+        <ul class="menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li>
+                <a href="">ขั้นตอนวิธีแบบลำดับ</S></a>
+                <ul>
+                    <li><a href="algorithm1.html">คำนวณเงินทอน</a></li>
+                    <li><a href="algorithm2.html">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a>
+                <ul>
+                    <li><a href="algorithm3.html">คำนวณค่าดัชนีมวลกาย</a></li>
+                    <li><a href="algorithm4.html">การตัดเกรด</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a>
+                <ul>
+                    <li><a href="algorithm5.html">หาค่าจำนวน GCD/LCM</a></li>
+                    <li><a href="algorithm6.html">แปลงค่าตัวเลข->อักษร</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- work area -->
+    <div class="algo">
+        <p>แปลงค่าตัวเลข -> ตัวเงินอักษร</p>
+        <div class="algo_left">
+            Algorithms : แปลงค่าตัวเลข -> อักษร<br>
+            <img src="img/alg06.jpg" alt="">
+        </div>
+        <div class="algo_right">
+            <div class="input">
+                <p>จำนวนเงิน </p>
+                <input type="text" id="input1" value="12345">
+                <p>บาท
+                </p>
+            </div>
+            <button class="work" onclick="caluateAlgorithm6();">แปลงตัวอักษร</button>
+            <button class="cancel" onclick="clearAlgorithm6();">ยกเลิก</button>
+            <div class="show">
+                <h2>รวมเงินทั้งสิ้น</h2>
+                <label id="total">บาทถ้วน</label>
+            </div>
+            ** หมายเหตุ : ตัวเลขมีค่าไม่เกินหลักหมื่นเท่านั้น
+        </div>
+
+    </div>
+    <script>
+        function caluateAlgorithm6() {
+            let x = parseInt(document.getElementById("input1").value);
+            let st = '';
+            let n = 0;
+            let l = 0;
+            if (x == 1) {
+                st = 'หนึ่ง';
+            } else {
+                while (x != 0) {
+                    //หา ค่าหลัก= l และหาค่าเลขประจำหลัก = n
+                    if (x >= 10000) {
+                        n = Math.floor(x / 10000);
+                        x = x % 10000;
+                        l = 5;
+                    } else if (x >= 1000) {
+                        n = Math.floor(x / 1000);
+                        x = x % 1000;
+                        l = 4;
+                    } else if (x >= 100) {
+                        n = Math.floor(x / 100);
+                        x = x % 100;
+                        l = 3;
+                    } else if (x >= 10) {
+                        n = Math.floor(x / 10);
+                        x = x % 10;
+                        l = 2;
+                    } else {
+                        n = x;
+                        l = 1;
+                        x = 0;
+                    }
+
+                    //หา ตัวอักษรตามเลขประจำหลัก
+                    switch (n) {
+                        case 1: if (l == 1) { st = st + 'เอ็ด'; } else if (l != 2) { st = st + 'หนึ่ง'; } break;
+                        case 2: if (l == 2) { st = st + 'ยี่'; } else { st = st + 'สอง'; } break;
+                        case 3: st = st + 'สาม'; break;
+                        case 4: st = st + 'สี่'; break;
+                        case 5: st = st + 'ห้า'; break;
+                        case 6: st = st + 'หก'; break;
+                        case 7: st = st + 'เจ็ด'; break;
+                        case 8: st = st + 'แปด'; break;
+                        case 9: st = st + 'เก้า';
+                    }
+
+                    //หา ตัวอักษรตามหลัก
+                    switch (l) {
+                        case 5: st = st + 'หมื่น'; break;
+                        case 4: st = st + 'พัน'; break;
+                        case 3: st = st + 'ร้อย'; break;
+                        case 2: st = st + 'สิบ'; break;
+                    }
+                }
+            }
+            document.getElementById("total").innerText = st + 'บาทถ้วน';
+        }
+
+        function clearAlgorithm6() {
+            document.getElementById("input1").value = '0';
+            document.getElementById("total").innerText = '-';
+        }
+    </script>
+</body>
+
+</html>

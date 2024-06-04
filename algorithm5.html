@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+Thai:wght@100..900&family=Sriracha&display=swap"
+        rel="stylesheet">
+    <title>Prototype of 5671601 Introduction to SE.</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/algorithm5.css" />
+</head>
+
+<body>
+    <!-- header & Menu bar -->
+    <div class="header">
+        <p class="txtHead">ระบบทบทวนขั้นตอนวิธี Algorithms</p>
+        <ul class="menu">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li>
+                <a href="">ขั้นตอนวิธีแบบลำดับ</S></a>
+                <ul>
+                    <li><a href="algorithm1.html">คำนวณเงินทอน</a></li>
+                    <li><a href="algorithm2.html">ไฟแนนซ์ผ่อนรถยนต์</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบเงื่อนไข</a>
+                <ul>
+                    <li><a href="algorithm3.html">คำนวณค่าดัชนีมวลกาย</a></li>
+                    <li><a href="algorithm4.html">การตัดเกรด</a></li>
+                </ul>
+            </li>
+            <li><a href="#">ขั้นตอนวิธีแบบทำซ้ำ</a>
+                <ul>
+                    <li><a href="algorithm5.html">หาค่าจำนวน GCD/LCM</a></li>
+                    <li><a href="algorithm6.html">แปลงค่าตัวเลข->อักษร</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- work area -->
+    <div class="algo">
+        <p>หาค่าจำนวน GCD/LCM</p>
+        <div class="algo_left">
+            Algorithms : หาค่าจำนวน GCD/LCM<br>
+            <img src="img/algo5.jpg" alt="">
+        </div>
+        <div class="algo_right">
+            <div class="input">
+                <p>ค่าตัวเลข ที่ #1</p>
+                <input type="text" id="input1" value="25">
+                <p>
+                </p>
+                <p>ค่าตัวเลข ที่ #2</p>
+                <input type="text" id="input2" value="30">
+                <p>
+                </p>
+            </div>
+            <button class="work" onclick="caluateAlgorithm5();">คำนวณ</button>
+            <button class="cancel" onclick="clearAlgorithm5();">ยกเลิก</button>
+            <div class="show">
+                <h2>ผลการหาค่า</h2>
+                <div class="show_area">
+                    <p>ค.ร.น. (LCM) </p>
+                    <p class="money">0</p>
+                    <p></p>
+                    <p>ห.ร.ม. (GCD) </p>
+                    <p class="money">0</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function caluateAlgorithm5() {
+            let x = parseFloat(document.getElementById("input1").value);
+            let y = parseFloat(document.getElementById("input2").value);
+            let Sum = x * y;
+            console.log(Sum);
+            while (x != y) {
+                if (x > y) { x = x - y; }
+                else { y = y - x; }
+                console.log(x + ' = ' + y);
+            }
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = Sum / x;
+            d[1].innerText = x;
+        }
+
+        function clearAlgorithm5() {
+            document.getElementById("input1").value = '0.00';
+            document.getElementById("input2").value = '0.00';
+            let d = document.getElementsByClassName("money");
+            d[0].innerText = '0';
+            d[1].innerText = '0';
+        }
+    </script>
+</body>
+
+</html>
